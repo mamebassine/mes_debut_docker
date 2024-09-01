@@ -33,7 +33,12 @@ class ArticleController extends Controller
         $article->update($request->all());
         return response()->json($article, 200);
     }
-
+ // DELETE api/articles/{id}
+ public function destroy($id)
+ {
+     Article::destroy($id);
+     return response()->json(null, 204);
+ }
    
 }
 
